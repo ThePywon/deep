@@ -35,7 +35,7 @@ This is a small and simple package that handles objects using usefull function l
 ### Node.js
 
 > ```js
-> const myPackage = require("@protagonists/deep");
+> const deep = require("@protagonists/deep");
 > ```
 
 ---

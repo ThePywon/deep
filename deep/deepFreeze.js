@@ -1,3 +1,5 @@
+"use strict";
+
 function deepFreeze(obj) {
   // Stop here if not an object
   if(typeof obj !== "object")
