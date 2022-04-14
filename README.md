@@ -1,6 +1,6 @@
-# Package name
+# deep
 
-## Small description of the package goes here
+## A simple package to handle objects
 
 
 
