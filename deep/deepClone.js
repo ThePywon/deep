@@ -1,3 +1,5 @@
+"use strict";
+
 function deepClone(obj, map = new WeakMap()) {
   // Solve simple use cases
   if(!obj || typeof obj !== "object")
