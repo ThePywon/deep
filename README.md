@@ -7,7 +7,7 @@
 # Table of content
 
 * [**How to use?**](#how-to-use)
-* <details><summary><a href="functions"><b>Functions</b></a></summary>
+* <details><summary><a href="#functions"><b>Functions</b></a></summary>
   <p>
 
     * [**deepClone**](#deepclone)
