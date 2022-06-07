@@ -1,22 +1,39 @@
-# deep
+<div id="top" align="center">
 
-## A simple package to handle objects
+<h1><a href="https://github.com/ThePywon/deep">deep</a></h1>
+ 
+[![npm version](https://img.shields.io/npm/v/@protagonists/deep)](https://npmjs.com/package/@protagonists/deep)
+[![npm downloads](https://img.shields.io/npm/dt/@protagonists/deep)](https://npmjs.com/package/@protagonists/deep)
+[![discord server](https://img.shields.io/discord/937758194736955443?logo=discord&logoColor=white)](https://discord.gg/cwhj3EgqGP)
+[![last commit](https://img.shields.io/github/last-commit/ThePywon/deep)](https://github.com/ThePywon/deep)
+ 
+</div>
+
+
+
+# About
+
+A package used to clone and freeze object in more than just a superficial level
+
+---
+
+<br/><br/><br/>
 
 
 
 # Table of content
 
 * [**How to use?**](#how-to-use)
-* <details><summary><a href="#functions"><b>Functions</b></a></summary>
-  <p>
 
-    * [**deepClone**](#deepclone)
-    * [**deepFreeze**](#deepfreeze)
+> The content below does not correspond to the object structure of the objects
 
-  </p>
-</details>
+* [**deepClone**](https://github.com/ThePywon/deep/blob/main/documentation/deepClone.md) &nbsp; ![Exported](https://img.shields.io/badge/-Exported-cyan)
+
+* [**deepFreeze**](https://github.com/ThePywon/deep/blob/main/documentation/deepFreeze.md) &nbsp; ![Exported](https://img.shields.io/badge/-Exported-cyan)
 
 ---
+
+<br/><br/><br/>
 
 
 
@@ -24,67 +41,58 @@
 
 ## Description
 
-This is a small and simple package that handles objects using usefull function like `deepClone` and `deepFreeze`
+This package allows for cloning and freezing all the way, and even supports circular references!
 
 ## Import
 
 ### Terminal
 
-> `npm i @protagonists/deep`
+> ```sh
+> npm install @protagonists/deep
+> ```
 
 ### Node.js
 
 > ```js
-> const deep = require("@protagonists/deep");
+> const { deepClone, deepFreeze } = require("@protagonists/deep");
 > ```
 
 ---
 
 
 
-# Functions
-
-# deepClone
-
-## Description
-
-This function creates a deep clone of an original object
-
-## Syntax
-
-```js
-deep.deepClone(obj: Object)
-```
+<br/>
 
 ## Example
 
 ### Code:
 
 ```js
-// Original
-const a = {
+// Imports
+const { deepClone } = require("@protagonists/deep");
+
+// Create some object
+const John = {
   name: "John",
   age: 37,
-  gender: 'M',
   friend: {
     name: "Steve",
-    age: 28,
-    gender: 'M'
+    age: 35
   }
 }
 
-// Cloned
-const b = deep.deepClone(a);
+// Clone it
+const clone = deepClone("John");
+// Edit a value in the nested object
+clone.friend.name = "Meep";
 
-// Modifications
-b.name = "Carla";
-b.gender = 'F';
-b.friend.name = "Meep";
-
-// Result
-console.log(a);
-console.log(b);
+// Log them both
+// this show that the nested object in the clone is not the same!
+console.log(John);
+console.log(clone);
 ```
+
+<br/>
 
 ### Output:
 
@@ -92,72 +100,22 @@ console.log(b);
 {
   name: 'John',
   age: 37,
-  gender: 'M',
   friend: {
     name: 'Steve',
-    age: 28,
-    gender: 'M'
+    age: 35
   }
 }
 {
-  name: 'Carla',
+  name: 'John',
   age: 37,
-  gender: 'F',
   friend: {
     name: 'Meep',
-    age: 28,
-    gender: 'M'
+    age: 35
   }
 }
 ```
 
+<br/><br/><br/><br/><br/>
 
-
-# deepFreeze
-
-## Description
-
-This function freezes an object all the way through
-
-## Syntax
-
-```js
-deep.deepFreeze(obj: Object)
-```
-
-## Example
-
-### Code:
-
-```js
-const a = {
-  name: "John",
-  age: 37,
-  gender: 'M',
-  friend: {
-    name: "Steve",
-    age: 28,
-    gender: 'M'
-  }
-}
-
-deep.deepFreeze(a);
-
-a.friend.name = "Meep"; // Error in strict mode
-
-console.log(a);
-```
-
-### Output:
-
-```
-{
-  name: 'John',
-  age: 37,
-  gender: 'M',
-  friend: {
-    name: 'Steve',
-    age: 28,
-    gender: 'M'
-  }
-}
+<h1 align="center">This is the bottom, there is nothing more.<br/>
+Go <a href="#top">back up?</a></h1>
